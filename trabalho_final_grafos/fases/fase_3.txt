@@ -1,0 +1,6 @@
+W W W 0 L W W W
+W W W 0 C2_L W W W
+G2 0 L 0 L 0 0 O1
+G1 0 L 0 L 0 0 O2
+W W W L C1_L W W W
+W W W 0 L W W W

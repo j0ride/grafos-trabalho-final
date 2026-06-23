@@ -1,0 +1,4 @@
+W O1 W W W W O2
+W 0 W W W W 0
+W C2 W 0 W W C2
+0 G2 0 0 0 C1 G1

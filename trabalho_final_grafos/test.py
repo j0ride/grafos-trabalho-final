@@ -1,5 +1,6 @@
 import os
 import glob
+import time
 from cats_love_boxes import resolver_fase
 
 def carregar_fase_txt(caminho_arquivo):
@@ -31,7 +32,14 @@ def executar_bateria_de_testes():
         
         try:
             matriz = carregar_fase_txt(caminho)
+            
+            # --- MEDIÇÃO DE TEMPO INÍCIO ---
+            tempo_inicio = time.perf_counter()
             resultado = resolver_fase(matriz)
+            tempo_fim = time.perf_counter()
+            # -------------------------------
+            
+            tempo_total = tempo_fim - tempo_inicio
             
             print(f"  Resultado obtido: ", end="")
             if resultado == "NAO":
@@ -39,6 +47,10 @@ def executar_bateria_de_testes():
             else:
                 print(f"Solucionado de forma ótima! ✔️ ({len(resultado)} passos)")
                 print(f"  Movimentos calculados: {resultado}")
+            
+            # Exibe o tempo gasto com precisão de 4 casas decimais
+            print(f"  Tempo de execução: {tempo_total:.4f} segundos")
+            
         except Exception as e:
             print(f"  Falha Crítica ao interpretar {nome_fase}: {e}")
             
